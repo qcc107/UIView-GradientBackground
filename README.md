@@ -10,16 +10,16 @@
 
 ## 🌟 Features
 
-- [x] 使用简单
-- [x] 支持自动布局
-- [x] 灵活配置，可从不同位置渐变
+- [x] Easy to use
+- [x] User autolayout
+- [x] Flexible configuration that can be gradient from different locations
 
 ## 📲 Installation
 
-Just add UIViewController+CBPopup.h and .m files to your project.
+Just add UIView+GradientBackground.h and .m files to your project.
 
 ## 🌰 Usage
-### Popup your custom viewcontroller
+### Gradient a view's background
 
 #### In your current viewcontroller:
 ```obj-c
