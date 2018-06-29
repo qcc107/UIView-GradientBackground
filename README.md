@@ -6,7 +6,7 @@
 [![Support](https://img.shields.io/badge/support-iOS%209%2B%20-orange.svg?style=flat)](https://www.apple.com/nl/ios/)
 
 # Using
-![](https://github.com/qcc107/UIView-GradientBackground/blob/master/IMG_1580)
+![](https://github.com/qcc107/UIView-GradientBackground/blob/master/IMG_1580.png)
 
 ## 🌟 Features
 
