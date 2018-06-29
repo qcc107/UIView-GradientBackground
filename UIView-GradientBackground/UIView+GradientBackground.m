@@ -114,7 +114,7 @@
     [self setNeedsDisplay];
 }
 
-- (void)cb_removegGradientBackground
+- (void)cb_removeGradientBackground
 {
     [self.cb_gradientView removeFromSuperview];
 }

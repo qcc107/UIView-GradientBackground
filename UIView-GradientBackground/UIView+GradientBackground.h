@@ -49,6 +49,6 @@
                                toColor:(UIColor *)toColor
                          useAutoLayout:(BOOL)useAutoLayout;
 
-- (void)cb_removegGradientBackground;
+- (void)cb_removeGradientBackground;
 
 @end
