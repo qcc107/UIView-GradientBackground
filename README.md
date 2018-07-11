@@ -27,14 +27,13 @@ Just add UIView+GradientBackground.h and .m files to your project.
 ```
 then
 ```obj-c
-[self.view1 cb_gradientBackgroundFromPoint:CGPointMake(0, 0) toPoint:CGPointMake(1, 1) fromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
+[self.view1 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor] fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(1, 1)];
 
-[self.view2 cb_gradientBackgroundFromPoint:CGPointMake(0, 0) toPoint:CGPointMake(1, 0) fromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
+[self.view2 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor] fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, 1)];
 
-[self.view3 cb_gradientBackgroundFromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, 1) fromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
+[self.view3 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor] fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, 1)];
 
 [self.view4 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
-
 ```
 
 ### 📴 Remove
