@@ -40,29 +40,29 @@
 - (void)cb_gradientBackgroundFromColor:(UIColor *)fromColor
                                toColor:(UIColor *)toColor
 {
-    [self cb_gradientBackgroundFromPoint:CGPointMake(0, 0)
-                                 toPoint: CGPointMake(1, 1)
-                               fromColor:fromColor
+    [self cb_gradientBackgroundFromColor:fromColor
                                  toColor:toColor
+                               fromPoint:CGPointMake(0, 0)
+                                 toPoint:CGPointMake(1, 1)
                            useAutoLayout:YES];
 }
 
-- (void)cb_gradientBackgroundFromPoint:(CGPoint)fromPoint
-                               toPoint:(CGPoint)toPoint
-                             fromColor:(UIColor *)fromColor
+- (void)cb_gradientBackgroundFromColor:(UIColor *)fromColor
                                toColor:(UIColor *)toColor
+                             fromPoint:(CGPoint)fromPoint
+                               toPoint:(CGPoint)toPoint
 {
-    [self cb_gradientBackgroundFromPoint:fromPoint
-                                 toPoint:toPoint
-                               fromColor:fromColor
+    [self cb_gradientBackgroundFromColor:fromColor
                                  toColor:toColor
+                               fromPoint:fromPoint
+                                 toPoint:toPoint
                            useAutoLayout:YES];
 }
 
-- (void)cb_gradientBackgroundFromPoint:(CGPoint)fromPoint
-                               toPoint:(CGPoint)toPoint
-                             fromColor:(UIColor *)fromColor
+- (void)cb_gradientBackgroundFromColor:(UIColor *)fromColor
                                toColor:(UIColor *)toColor
+                             fromPoint:(CGPoint)fromPoint
+                               toPoint:(CGPoint)toPoint
                          useAutoLayout:(BOOL)useAutoLayout
 {
     if (self.cb_gradientView.superview) {

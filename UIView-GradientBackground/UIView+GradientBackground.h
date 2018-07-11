@@ -30,10 +30,10 @@
  *  @praram toColor end color of gradient
  */
 
-- (void)cb_gradientBackgroundFromPoint:(CGPoint)fromPoint
-                               toPoint:(CGPoint)toPoint
-                             fromColor:(UIColor *)fromColor
-                               toColor:(UIColor *)toColor;
+- (void)cb_gradientBackgroundFromColor:(UIColor *)fromColor
+                               toColor:(UIColor *)toColor
+                             fromPoint:(CGPoint)fromPoint
+                               toPoint:(CGPoint)toPoint;
 
 /**
  *  Gradient a view's background
@@ -43,10 +43,10 @@
  *  @praram toColor end color of gradient
  *  @praram useAutoLayout default YES
  */
-- (void)cb_gradientBackgroundFromPoint:(CGPoint)fromPoint
-                               toPoint:(CGPoint)toPoint
-                             fromColor:(UIColor *)fromColor
+- (void)cb_gradientBackgroundFromColor:(UIColor *)fromColor
                                toColor:(UIColor *)toColor
+                             fromPoint:(CGPoint)fromPoint
+                               toPoint:(CGPoint)toPoint
                          useAutoLayout:(BOOL)useAutoLayout;
 
 - (void)cb_removeGradientBackground;
