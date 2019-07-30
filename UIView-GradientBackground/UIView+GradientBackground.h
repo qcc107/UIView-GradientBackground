@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBGradientView : UIView
-@end
-
 @interface UIView (GradientBackground)
 
 /**
- *  Gradient a view's background
+ *  Gradient a view's background, default (0, 0) --> (1, 1)
  *  @praram fromColor begin color of gradient
  *  @praram toColor end color of gradient
  */
@@ -24,8 +21,8 @@
 
 /**
  *  Gradient a view's background
- *  @praram fromPoint start point of gradient default (0, 0)
- *  @praram toPoint end point of gradient default (1, 1)
+ *  @praram fromPoint start point of gradient
+ *  @praram toPoint end point of gradient
  *  @praram fromColor begin color of gradient
  *  @praram toColor end color of gradient
  */
@@ -37,8 +34,8 @@
 
 /**
  *  Gradient a view's background
- *  @praram fromPoint start point of gradient default (0, 0)
- *  @praram toPoint end point of gradient default (1, 1)
+ *  @praram fromPoint start point of gradient
+ *  @praram toPoint end point of gradient
  *  @praram fromColor begin color of gradient
  *  @praram toColor end color of gradient
  *  @praram useAutoLayout default YES
@@ -48,6 +45,18 @@
                              fromPoint:(CGPoint)fromPoint
                                toPoint:(CGPoint)toPoint
                          useAutoLayout:(BOOL)useAutoLayout;
+
+/**
+ *  Gradient a view's background
+ *  @praram fromPoint start point of gradient default
+ *  @praram toPoint end point of gradient default
+ *  @praram colors color array of gradient
+ *  @praram useAutoLayout default YES
+ */
+- (void)cb_gradientBackgroundWithColors:(NSArray *)colors
+                              fromPoint:(CGPoint)fromPoint
+                                toPoint:(CGPoint)toPoint
+                          useAutoLayout:(BOOL)useAutoLayout;
 
 - (void)cb_removeGradientBackground;
 

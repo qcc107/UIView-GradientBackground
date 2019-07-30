@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *view2;
 @property (weak, nonatomic) IBOutlet UIView *view3;
 @property (weak, nonatomic) IBOutlet UIView *view4;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end
 
@@ -31,8 +32,14 @@
     [self.view3 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor] fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, 1)];
 
     [self.view4 cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
+    
+    [self.button cb_gradientBackgroundFromColor:[UIColor redColor] toColor:[UIColor orangeColor]];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

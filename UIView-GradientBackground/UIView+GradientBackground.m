@@ -9,17 +9,20 @@
 #import "UIView+GradientBackground.h"
 #import <objc/runtime.h>
 
-@implementation CBGradientView
+@interface _CBGradientView : UIView
+@end
+
+@implementation _CBGradientView
 + (Class)layerClass{return [CAGradientLayer class];}
 @end
 
 @interface UIView ()
-@property (strong, nonatomic) CBGradientView *cb_gradientView;
+@property (strong, nonatomic) _CBGradientView *cb_gradientView;
 @end
 
 @implementation UIView (GradientBackground)
 
-- (void)setCb_gradientView:(CBGradientView *)gradientView
+- (void)setCb_gradientView:(_CBGradientView *)gradientView
 {
     if (gradientView != self.cb_gradientView)
     {
@@ -32,7 +35,7 @@
     }
 }
 
-- (CBGradientView *)cb_gradientView
+- (_CBGradientView *)cb_gradientView
 {
     return objc_getAssociatedObject(self, @selector(cb_gradientView));
 }
@@ -65,12 +68,32 @@
                                toPoint:(CGPoint)toPoint
                          useAutoLayout:(BOOL)useAutoLayout
 {
+    NSMutableArray *colorArray = @[].mutableCopy;
+
+    if (fromColor) {
+        [colorArray addObject:fromColor];
+    }
+    if (toColor) {
+        [colorArray addObject:toColor];
+    }
+    [self cb_gradientBackgroundWithColors:colorArray fromPoint:fromPoint toPoint:toPoint useAutoLayout:useAutoLayout];
+}
+
+- (void)cb_gradientBackgroundWithColors:(NSArray *)colors
+                              fromPoint:(CGPoint)fromPoint
+                                toPoint:(CGPoint)toPoint
+                          useAutoLayout:(BOOL)useAutoLayout
+{
+    if (colors.count <= 0) {
+        return;
+    }
+    
     if (self.cb_gradientView.superview) {
         [self.cb_gradientView removeFromSuperview];
         self.cb_gradientView = nil;
     }
     
-    CBGradientView *view = [CBGradientView new];
+    _CBGradientView *view = [_CBGradientView new];
     view.userInteractionEnabled = NO;
     view.frame = self.bounds;
     
@@ -78,7 +101,12 @@
     
     CAGradientLayer *layer = (CAGradientLayer *)(self.cb_gradientView.layer);
     
-    layer.colors = @[(__bridge id)fromColor.CGColor, (__bridge id)toColor.CGColor];
+    NSMutableArray *cgColorArray = @[].mutableCopy;
+    for (UIColor *color in colors) {
+        [cgColorArray addObject:(__bridge id)color.CGColor];
+    }
+    
+    layer.colors = cgColorArray;
     layer.startPoint = fromPoint;
     layer.endPoint = toPoint;
     
@@ -101,10 +129,6 @@
         
         [self addConstraints:hConstraints];
         [self addConstraints:vConstraints];
-    }
-    
-    if ([self isKindOfClass:[UIButton class]]) {
-        [self bringSubviewToFront:((UIButton *)self).imageView];
     }
     
     if ([self isKindOfClass:[UIButton class]]) {
